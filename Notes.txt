@@ -1,0 +1,7 @@
+Module Tree:-
+
+Template Moudule =home =News Feed
+
+TimeLine Module=Time Line
+
+edit-my-profile.module=Edit Profile

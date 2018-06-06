@@ -1,0 +1,132 @@
+<header id="header">
+  <nav class="navbar navbar-default navbar-fixed-top menu">
+    <div class="container">
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+          aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index-register.html">
+          <img src="images/logo.png" alt="logo" />
+        </a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right main-menu">
+
+          <li class="dropdown">
+            <a routerLinkActiveOptions="{ exact: true }" routerLinkActive="active" routerLink="/home">
+              <i class="icon ion-ios-home "></i>
+              Home
+            </a>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="icon ion-ios-paper"></i>
+              Newsfeed
+              <span>
+                <img src="./../../../assets/images/down-arrow.png" alt="" />
+              </span>
+            </a>
+            <ul class="dropdown-menu newsfeed-home">
+              <li>
+
+                <a routerLink="/newsfeed">
+                  <i class="icon ion-ios-paper"></i>
+                  Newsfeed</a>
+              </li>
+
+
+              <li routerLinkActive="active">
+                <div>
+                  <a routerLinkActive="active" routerLink="/todays-Contest">
+                    <i class="icon ion-ios-camera "></i> Today's Competation
+                  </a>
+                </div>
+              </li>
+
+              <li>
+                <a routerLinkActive="active" routerLink="/friends">
+                  <i class="icon ion-ios-people"></i>
+                  My friends</a>
+              </li>
+
+              <li>
+                <a routerLink="/images" routerLinkActive="active">
+                  <i class="icon ion-images"></i>
+                  Images</a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              
+                <i class="icon ion-ios-book"></i>
+              
+              
+              Timeline
+              <span>
+                <img src="./../../../assets/images/down-arrow.png" alt="" />
+              </span>
+            </a>
+            <ul class="dropdown-menu login">
+              <li>
+                <a routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Timeline</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/timeline/about-me">Timeline About</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/timeline/my-album">Timeline Album</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/timeline/my-friends">Timeline Friends</a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/edit-profile/basic" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                  <i class="icon ion-ios-information-outline">Edit Basic Information</i>
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLink="/edit-profile/work" routerLinkActive="active">
+                  <i class="icon ion-ios-briefcase-outline">Edit Education and Work</i>
+                </a>
+              </li>
+              <li routerLinkActive="active">
+                <a routerLinkActive="active" routerLink="/edit-profile/interest">
+                  <i class="icon ion-ios-heart-outline">Edit My Interests</i>
+                </a>
+              </li>
+
+              <li routerLinkActive="active">
+                <a routerLinkActive="active" routerLink="/edit-profile/change-password">
+                  <i class="icon ion-ios-locked-outline">Change Password</i>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <button id="btn" class="btn  btn-danger">Log-Out</button>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right hidden-sm">
+          <div class="form-group">
+            <i class="icon ion-android-search"></i>
+            <input type="text" class="form-control" placeholder="Search friends, photos, videos">
+          </div>
+        </form>
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+</header>
+<!--Header End-->

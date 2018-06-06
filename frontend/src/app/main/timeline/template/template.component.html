@@ -1,0 +1,152 @@
+<div class="container">
+  <!-- Timeline
+    ================================================= -->
+  <div class="timeline">
+    <div class="timeline-cover">
+
+      <!--Timeline Menu for Large Screens-->
+      <div class="timeline-nav-bar hidden-sm hidden-xs">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="profile-info">
+              <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+              <h3>Sarah Cruiz</h3>
+              <p class="text-muted">Creative Director</p>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <ul class="list-inline profile-menu">
+              <li>
+                <a routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Timeline</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="about-me">About</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="my-album">Album</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="my-friends">Friends</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      <!--Timeline Menu for Large Screens End-->
+
+      <!--Timeline Menu for Small Screens-->
+      <div class="navbar-mobile hidden-lg hidden-md">
+        <div class="profile-info">
+          <img src="http://placehold.it/300x300" alt="" class="img-responsive profile-photo" />
+          <h4>Sarah Cruiz</h4>
+          <p class="text-muted">Creative Director</p>
+        </div>
+        <div class="mobile-menu">
+          <ul class="list-inline">
+            <li>
+              <a routerLink="/timeline" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Timeline</a>
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="about-me">About</a>
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="my-album">Album</a>
+            </li>
+            <li>
+              <a routerLinkActive="active" routerLink="my-friends">Friends</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <!--Timeline Menu for Small Screens End-->
+
+    </div>
+    <div id="page-contents">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-7">
+
+          <!-- Post Create Box
+            ================================================= -->
+          <div class="create-post">
+            <div class="row">
+              <div class="col-md-7 col-sm-7">
+                <div class="form-group">
+                  <img src="http://placehold.it/300x300" alt="" class="profile-photo-md" />
+                  <textarea name="texts" id="exampleTextarea" cols="30" rows="1" class="form-control" placeholder="Write what you wish"></textarea>
+                </div>
+              </div>
+              <div class="col-md-5 col-sm-5">
+                <div class="tools">
+                  <ul class="publishing-tools list-inline">
+                    <li>
+                      <a href="#">
+                        <i class="ion-compose"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-images"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-ios-videocam"></i>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <i class="ion-map"></i>
+                      </a>
+                    </li>
+                  </ul>
+                  <button class="btn btn-primary pull-right">Publish</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Post Create Box End-->
+
+          <!-- Post Content
+            ================================================= -->
+          <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-2 static">
+          <div id="sticky-sidebar">
+            <h4 class="grey">Sarah's activity</h4>
+            <div class="feed-item">
+              <div class="live-activity">
+                <p>
+                  <a href="#" class="profile-link">Sarah</a> Commended on a Photo</p>
+                <p class="text-muted">5 mins ago</p>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="live-activity">
+                <p>
+                  <a href="#" class="profile-link">Sarah</a> Has posted a photo</p>
+                <p class="text-muted">an hour ago</p>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="live-activity">
+                <p>
+                  <a href="#" class="profile-link">Sarah</a> Liked her friend's post</p>
+                <p class="text-muted">4 hours ago</p>
+              </div>
+            </div>
+            <div class="feed-item">
+              <div class="live-activity">
+                <p>
+                  <a href="#" class="profile-link">Sarah</a> has shared an album</p>
+                <p class="text-muted">a day ago</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
