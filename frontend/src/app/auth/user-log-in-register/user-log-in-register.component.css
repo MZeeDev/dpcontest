@@ -1,0 +1,19 @@
+
+#registration_form input.ng-invalid.ng-touched{
+    border: 1px solid  red;
+}
+
+#registration_form input.ng-valid.ng-touched{
+    border: 1px solid  green;
+}
+
+#login input.ng-invalid.ng-touched{
+  border: 1px solid  red;
+}
+.nav nav-tabs{
+  background-color: skyblue;
+}
+#login input.ng-valid.ng-touched{
+  border: 1px solid  green;
+}
+

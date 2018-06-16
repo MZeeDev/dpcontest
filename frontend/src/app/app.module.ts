@@ -1,31 +1,48 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from "@angular/router";
-
 import { AppComponent } from './app.component';
 
-const route:Routes=[
-  
+import { HttpClientModule } from '@angular/common/http';
+import { GuestGuard } from './guards/guest.guard';
+import { UserAuthenticationGuard } from './guards/userAuthentication.guard';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthServiceManual } from './services/authguard.service';
+
+const route: Routes = [
   {
-    path:"",
-    loadChildren:"./main/main.module#MainModule"
+    path: "",
+    loadChildren: "./main/main.module#MainModule"
+
+    , canActivate: [UserAuthenticationGuard]
   },
   {
-    path:"home",
-    loadChildren:"./main/main.module#MainModule"
-  }
+    path: "home",
+    loadChildren: "./main/main.module#MainModule"
 
+    , canActivate: [UserAuthenticationGuard]
+  },
+  {
+    path: "user-gate-way",
+    loadChildren: "./auth/auth.module#AuthModule",
+
+    canActivate: [GuestGuard]
+  }
 ]
 
 @NgModule({
   declarations: [
-    AppComponent 
+    AppComponent
   ],
   imports: [
-    BrowserModule ,
-    RouterModule.forRoot(route)
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(route),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthServiceManual, UserAuthenticationGuard, GuestGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

@@ -6,6 +6,7 @@ import { EditWorkComponent } from './edit-work/edit-work.component';
 import { InterestsComponent } from './interests/interests.component';
 import { ChangePassWordComponent } from './change-pass-word/change-pass-word.component';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 const route: Routes = [{
   path: "",
   component: TemplateComponent,
@@ -39,6 +40,8 @@ const route: Routes = [{
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(route)
   ],
   declarations: [TemplateComponent, EditbasicInfoComponent, EditWorkComponent, InterestsComponent, ChangePassWordComponent]

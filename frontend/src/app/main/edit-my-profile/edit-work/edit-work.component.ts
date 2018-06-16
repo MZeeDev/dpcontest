@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-work',
@@ -11,5 +12,12 @@ export class EditWorkComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmittingEducation(Education: NgForm) {
+    console.log(Education.value);
+    
+  }
+  onSubmittingwork(work: NgForm) {
+    console.log(work.value);
+     
+  }
 }

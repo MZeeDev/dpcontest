@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-editbasic-info',
   templateUrl: './editbasic-info.component.html',

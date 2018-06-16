@@ -1,0 +1,13 @@
+{
+    "PORT": 3000,
+    "BASE_URL": "http://localhost:3000",
+    "TOKEN_SECRET": "uj669590tYGry",
+    "MONGO_CONNECTION": "mongodb://zia:zia123@ds257470.mlab.com:57470/dpcontest",
+    "MAIL_HOST": "mail.encapsulatech.com",
+    "MAIL_USERNAME": "homebuyer@encapsulatech.com",
+    "MAIL_PORT": 25,
+    "MAIL_PASSWORD": "omO_z2^F.+2n",
+    "MAIL_FROM_ADDRESS": "homebuyer@encapsulatech.com",
+    "MAIL_FROM_NAME": "Homebuyer",
+    "MAIL_ENCRYPTION": false
+}

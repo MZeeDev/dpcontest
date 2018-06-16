@@ -1,0 +1,15 @@
+
+#education input.ng-invalid.ng-touched{
+    border: 1px solid  red;
+}
+#education input.ng-valid.ng-touched{
+    border: 1px solid  green;
+}
+
+
+#work input.ng-valid.ng-touched{
+    border: 1px solid  green;
+}
+#work input.ng-invalid.ng-touched{
+    border: 1px solid  red;
+}
