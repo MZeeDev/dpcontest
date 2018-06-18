@@ -11,5 +11,11 @@ export class TodaysCompitationComponent implements OnInit {
 
   ngOnInit() {
   }
+  voteForFirstCandidate1(_id){
+    //logic goes here
+  }
+  voteForFirstCandidate2(_id){
+        //logic goes here
+  }
 
 }

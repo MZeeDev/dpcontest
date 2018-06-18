@@ -24,9 +24,16 @@ export class AuthServiceManual {
   }
   constructor(private httpClient: HttpClient, private router: Router) { }
   //Sign Up
-  public async signup(name, email, password) {
-    let body = { name: name, email: email, password: password };
-    let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
+  // public async signup(name, email, password) {
+  //   let body = { name: name, email: email, password: password };
+  //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
+  //   return this.loginWithToken((<any>response).token);
+  // }
+
+
+  public async signup(value) {
+   
+    let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, value, Config.HEADERS).toPromise();
     return this.loginWithToken((<any>response).token);
   }
   //for logIn 

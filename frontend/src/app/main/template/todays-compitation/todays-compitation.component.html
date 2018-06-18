@@ -1,3 +1,60 @@
-<p>
-  todays-compitation works!
-</p>
+<div class="row">
+  
+  <a>  <h1 id="heading1" >Contest is being held by  XXXXX</h1>
+  </a>
+ 
+</div>
+<div class="row">
+  <!--Candidate 1-->
+  <div class="col col-md-6">
+    <table class="table">
+      <thead>
+          <tr class="hidden">
+              <th>id of first Candidae</th>
+            </tr>
+        <tr>
+          <th>Name Of Candidae 1</th>
+        </tr>
+        <tr>
+          <th>
+          <img id="competatorPic" class="img-responsive" src="./../../../../assets/cand1.png" alt="Error in loading Pic, Please Refresh or wait!">
+        </th>
+        </tr>
+        <tr>
+          <th><button class="btn btn-success" (click)="voteForFirstCandidate1(_id)">userName Vote For Me</button></th>
+        </tr>
+        <tr>
+          <th>Result</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <!--Candidate 1 Ends here-->
+ <!--Candidate 2 starts from here-->
+
+ <div class="col col-md-6">
+    <table class="table">
+      <thead>
+          <tr class="hidden">
+              <th>id of second Candidae</th>
+            </tr>
+        <tr>
+          <th>Name Of Candidate 2</th>
+        </tr>
+        <tr>
+          <th>
+            <img id="competatorPic" class="img-responsive"
+             src="./../../../../assets/cand2.bmp" alt="Error in loading Pic, Please Refresh or wait!">
+          </th>
+        </tr>
+        <tr>
+          <th style="align-content: center"><button class="btn btn-success" (click)="voteForFirstCandidate2(_id)">userName Vote For Me</button></th>
+        </tr>
+        <tr>
+          <th>Result</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+ <!--Candidate 2 ends here-->
+</div>

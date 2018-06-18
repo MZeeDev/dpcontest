@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -7,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editbasic-info.component.css']
 })
 export class EditbasicInfoComponent implements OnInit {
-
+  genderArray = ['Male','Female','Other'];
   constructor() { }
-
   ngOnInit() {
+  }
+  onSubmittingBasicInfo(basicInfo: NgForm) {
+    try {
+      console.log("hello i'm working fine");
+      
+      let value = basicInfo.value;
+      console.log(value);
+      
+    } catch (error) {
+      alert(error);
+    }
   }
 
 }

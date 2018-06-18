@@ -9,6 +9,7 @@ import { ImagesComponent } from './images/images.component';
 import { TodaysCompitationComponent } from './todays-compitation/todays-compitation.component';
 import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { StartContestComponent } from './start-contest/start-contest.component';
 
 
 const route: Routes = [{
@@ -35,6 +36,10 @@ const route: Routes = [{
     {
       path:"todays-Contest",
       component:TodaysCompitationComponent
+    },
+    {
+      path:"start-contest",
+      component:StartContestComponent
     }
   ]
 }]
@@ -44,7 +49,7 @@ const route: Routes = [{
     CommonModule,
     RouterModule.forChild(route)
   ],
-  declarations: [TemplateComponentComponent, WhotofollowComponent, NewsfeedComponent, FriendsComponent, ImagesComponent, TodaysCompitationComponent, LeftSideBarComponent, UserDetailComponent],
+  declarations: [TemplateComponentComponent, WhotofollowComponent, NewsfeedComponent, FriendsComponent, ImagesComponent, TodaysCompitationComponent, LeftSideBarComponent, UserDetailComponent, StartContestComponent],
   exports:[]
 })
 export class TemplateModule { }
