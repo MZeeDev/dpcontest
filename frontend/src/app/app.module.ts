@@ -7,7 +7,9 @@ import { GuestGuard } from './guards/guest.guard';
 import { UserAuthenticationGuard } from './guards/userAuthentication.guard';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthServiceManual } from './services/authguard.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 const route: Routes = [
   {
     path: "",
@@ -35,9 +37,12 @@ const route: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(route),
     HttpClientModule,
-    NgbModule.forRoot(),
+    NgbModule.forRoot()
+    
+   
   ],
   providers: [AuthServiceManual, UserAuthenticationGuard, GuestGuard],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:[]
 })
 export class AppModule { }

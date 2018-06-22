@@ -15,7 +15,7 @@ let config = new AuthServiceConfig([
   {
     id: FacebookLoginProvider.PROVIDER_ID,
     
-    provider: new FacebookLoginProvider("1224414374328501")
+    provider: new FacebookLoginProvider("252632908092092")
     // provider: new FacebookLoginProvider("1224414374328501")
   }
 ]);

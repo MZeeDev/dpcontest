@@ -11,7 +11,6 @@ import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { StartContestComponent } from './start-contest/start-contest.component';
 
-
 const route: Routes = [{
   path: "",
   component: TemplateComponentComponent,
@@ -47,8 +46,8 @@ const route: Routes = [{
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(route)
-  ],
+    RouterModule.forChild(route)   
+   ],
   declarations: [TemplateComponentComponent, WhotofollowComponent, NewsfeedComponent, FriendsComponent, ImagesComponent, TodaysCompitationComponent, LeftSideBarComponent, UserDetailComponent, StartContestComponent],
   exports:[]
 })
