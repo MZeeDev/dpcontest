@@ -3,6 +3,7 @@
 const { Router } = require('express');
 const { userController } = require('../controllers/userController');
 const { competitionController } = require('./../controllers/competitionController');
+const { candidateController } = require('./../controllers/candidateController');
 const router = new Router();
 
 //USER ROUTES
@@ -22,6 +23,9 @@ router.get('/competition', competitionController.getCompetitions);
 router.get('/competition/:competitionId', competitionController.getCompetitionById);
 router.post('/competition', competitionController.addCompetition);
 router.delete('/competition/:competitionId', competitionController.deleteCompetition);
+
+//CANDIDATE ROUTES
+router.put('/candidate/vote', candidateController.addVote);
 
 
 router.get("/test", function (req, res) {

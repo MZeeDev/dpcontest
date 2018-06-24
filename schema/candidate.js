@@ -7,7 +7,10 @@ var CandidateSchema = new mongoose.Schema(
         picUrl: String,
         address: String,
         userId: mongoose.Schema.Types.ObjectId,
-        votes: Number
+        votes: {
+            type: Number,
+            default: 0
+        }
     },
     {
         timestamps: true
