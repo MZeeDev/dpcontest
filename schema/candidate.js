@@ -1,12 +1,16 @@
-const { mongoose } = require('./mongoose')
+const { mongoose } = require('./mongoose');
+
 var CandidateSchema = new mongoose.Schema(
     {
-        name:String,
+        name: String,
         email: String,
         picUrl: String,
-        address:timestamps,
-        userId:mongoose.Types.ObjectId,
-        votes:Number
+        address: String,
+        userId: mongoose.Schema.Types.ObjectId,
+        votes: {
+            type: Number,
+            default: 0
+        }
     },
     {
         timestamps: true

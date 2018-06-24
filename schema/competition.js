@@ -1,14 +1,12 @@
 const { mongoose } = require('./mongoose')
 var CompetitionSchema = new mongoose.Schema(
     {
-        userID:mongoose.Types.ObjectId,
-        candidate1: mongoose.Types.ObjectId,
-        candidate2: mongoose.Types.ObjectId,
-        // candidate1: String,
-        // candidate2: String,
-        createdAt:timestamps,
+        userId: mongoose.Schema.Types.ObjectId,
+        candidate1: mongoose.Schema.Types.ObjectId,
+        candidate2: mongoose.Schema.Types.ObjectId,
         hours: {
-            type: timestamps
+            type: Number,
+            default: 24
         }
     },
     {
@@ -16,6 +14,6 @@ var CompetitionSchema = new mongoose.Schema(
     }
 );
 
-let User = mongoose.model('Competition', CompetitionSchema);
+let Competition = mongoose.model('Competition', CompetitionSchema);
 
 module.exports = { Competition }
