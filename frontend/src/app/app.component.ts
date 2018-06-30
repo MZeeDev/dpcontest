@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { NavigationEnd, NavigationError, NavigationCancel, NavigationStart, Router } from '@angular/router';
+import { Utils } from './utils';
 
 @Component({
   selector: 'app-root',
@@ -11,22 +12,23 @@ export class AppComponent implements OnInit {
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
-        var body = $("html, body");
-        body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
-        });
+        Utils.blockPage();
       }
-      else if ((event instanceof NavigationEnd) || (event instanceof NavigationError) || (event instanceof NavigationCancel)) {  
-        var body = $("html, body");
-        body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
-        });
+      else if ((event instanceof NavigationEnd) || (event instanceof NavigationError) || (event instanceof NavigationCancel)) {
+        Utils.unblockPage();
+        this.scrollUp();
       }    
     })
   }
+
   title = 'app';
+
   ngOnInit() {
     this.scrollUp();
   }
+
   scrollUp() {
     $("html, body").animate({ scrollTop: 0 }, 600);
   }
+  
 }
