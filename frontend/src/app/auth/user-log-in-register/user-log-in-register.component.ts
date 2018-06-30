@@ -20,7 +20,7 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
   async nonSubmittingRegistraionForm(registerationForm: NgForm) {
 
     try {
-      let value =await registerationForm.value;
+      let value = await registerationForm.value;
       this.authService.signup(value);
       swal("Great to see you!", "Thanks For SignUp,Now Go and Sign in and Enjoy!", "success");
     } catch (error) {
@@ -41,7 +41,7 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
   async logInWithFaceBook() {
     await this.socialAuthService.signIn(FacebookLoginProvider.PROVIDER_ID);
     this.sub = this.socialAuthService.authState.subscribe((user) => {
-      console.log(user);
+
       this.authService.getAuthState(user);
 
     });
@@ -50,7 +50,7 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
   async loginWithGoogle() {
     await this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
     this.sub = this.socialAuthService.authState.subscribe((user) => {
-      console.log(user);
+
       this.authService.getAuthState(user);
     });
   }
