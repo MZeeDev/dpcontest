@@ -31,6 +31,8 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
       let email = logInForm.value['email'];
       let password = logInForm.value['password'];
       let response = await this.authService.login(email, password);
+      console.log(response);
+      
     } catch (error) {
       console.log(error);
     }

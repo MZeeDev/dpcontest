@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Config } from '../../config';
 import { HttpClient } from '@angular/common/http';
-import 'rxjs/add/operator/toPromise';
+
 @Injectable()
 export class AuthServiceManual {
   public profile = {
@@ -26,28 +26,27 @@ export class AuthServiceManual {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
   //Sign Up
-  // public async signup(name, email, password) {
-  //   let body = { name: name, email: email, password: password };
+  // public async signup(firstname,lastname, email, password) {
+  //   let body = { firstname: firstname,lastname:lastname, email: email, password: password };
   //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, body, Config.HEADERS).toPromise();
   //   return this.loginWithToken((<any>response).token);
   // }
-  // public async signIn(name, email, password) {
-  //   let body = {  email: email, password: password };
-  //   let response = await this.httpClient.post(`${Config.API_BASE}/user/signIn`, body, Config.HEADERS).toPromise();
-  //   return this.loginWithToken((<any>response).token);
-  // }
-
-
-  updateWeatherStatus(city: string) {
-    // a1f2d85f6babd3bf7afd83350bc5f2a6
-    return this.httpClient.get('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+'&APPID=a1f2d85f6babd3bf7afd83350bc5f2a6&units=imperial&cnt=7', Config.HEADERS).toPromise();
+  public async signIn( email, password) {
+    let body = {  email: email, password: password };
+    let response = await this.httpClient.post(`${Config.API_BASE}/user/login`, body, Config.HEADERS).toPromise();
+    return this.loginWithToken((<any>response).token);
   }
-
   public async signup(value) {
 
     let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, value, Config.HEADERS).toPromise();
     return this.loginWithToken((<any>response).token);
   }
+
+  updateWeatherStatus(city: string) {
+    // a1f2d85f6babd3bf7afd83350bc5f2a6
+    return this.httpClient.get('http://api.openweathermap.org/data/2.5/forecast/daily?q='+city+'&APPID=a1f2d85f6babd3bf7afd83350bc5f2a6&units=imperial&cnt=7', Config.HEADERS).toPromise();
+  }
+  
   //for logIn 
   public async login(email, password) {
     let body = { email: email, password: password };

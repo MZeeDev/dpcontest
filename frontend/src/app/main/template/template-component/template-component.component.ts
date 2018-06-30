@@ -8,7 +8,7 @@ import { AuthServiceManual } from '../../../services/authguard.service';
 })
 export class TemplateComponentComponent implements OnInit {
 
-  constructor(private auth:AuthServiceManual) { }
+  constructor(public auth:AuthServiceManual) { }
 
   ngOnInit() {
   }
