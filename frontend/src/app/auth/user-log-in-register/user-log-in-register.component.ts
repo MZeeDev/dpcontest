@@ -17,11 +17,12 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-  onSubmittingRegistraionForm(registerationForm: NgForm) {
+  async nonSubmittingRegistraionForm(registerationForm: NgForm) {
 
     try {
-      let value = registerationForm.value;
+      let value =await registerationForm.value;
       this.authService.signup(value);
+      swal("Great to see you!", "Thanks For SignUp,Now Go and Sign in and Enjoy!", "success");
     } catch (error) {
       swal("error");
     }
@@ -31,8 +32,7 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
       let email = logInForm.value['email'];
       let password = logInForm.value['password'];
       let response = await this.authService.login(email, password);
-      console.log(response);
-      
+      swal("Great job!", "Thanks For SignIn! Enjoy!", "success");
     } catch (error) {
       console.log(error);
     }
