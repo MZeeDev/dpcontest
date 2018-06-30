@@ -12,6 +12,7 @@ class AuthMiddleware {
 
         var payload = null;
         try {
+            
             payload = jwt.decode(token, config.TOKEN_SECRET);
         }
         catch (err) {
