@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthServiceManual } from '../../../services/authguard.service';
 import { CompitationService } from '../../../services/compatation.services';
+declare const swal: any;
 @Component({
   selector: 'app-start-contest',
   templateUrl: './start-contest.component.html',
@@ -20,14 +21,16 @@ export class StartContestComponent implements OnInit {
     picUrl: null,
     address: null
   }
-  constructor(private auth: AuthServiceManual,private compitation:CompitationService) { }
+  constructor(private auth: AuthServiceManual, private compitation: CompitationService) { }
   public cand1: boolean = false;
   public cand2: boolean = false;
   ngOnInit() {
     this.cand2 = true;
   }
 
-  onSubmittingCandForm(cand1Form: NgForm) {
+  async onSubmittingCandForm(cand1Form: NgForm) {
+   
+   try {
     let obj = {
       "candidate1": {
         name: cand1Form.value['name'],
@@ -44,6 +47,20 @@ export class StartContestComponent implements OnInit {
       "userId": this.auth.profile._id,
       "hours": cand1Form.value['hours']
     }
-    this.compitation.startCompittaion(obj);
+   await this.compitation.startCompittaion(obj);
+    cand1Form.reset();
+    swal({
+      title: "Great!",
+      text: "You done it, Let's have fun with compitation!",
+      icon: "success",
+      button: "Aww yes!Cool",
+    });  
+   } catch (error) {
+    swal("OOPS!", "SomeThing Went Wrong!", "error");
+     
+   }
+   
+   
+
   }
 }

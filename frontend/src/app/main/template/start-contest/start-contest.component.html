@@ -39,5 +39,5 @@
     <label for="hours">Time (in hours)</label>
     <input id="hours" class="form-control input-group-lg" type="number" max="23" name="hours" ngModel required>
   </div>
-  <button type="submit" class="col-xs-12 btn btn-success">Let's Start!</button>
+  <button type="submit" [disabled]="!candForm.valid" class="col-xs-12 btn btn-success">Let's Start!</button>
 </form>

@@ -16,9 +16,13 @@ export class WhotofollowComponent implements OnInit {
   }
   
   public async  getAllUsers() {
+   try {
     let response = await this.auth.getAllUser();
-    this.allUsers = <any>response; 
-    console.log(this.allUsers);
+    this.allUsers = <any>response;     
+   } catch (error) {
+     
+   }
+
        
   }
 }

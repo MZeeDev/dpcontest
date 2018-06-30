@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AuthServiceManual } from '../../../services/authguard.service';
 declare const google: any;
 
 @Component({
@@ -14,11 +15,27 @@ export class NewsfeedComponent implements OnInit {
   map: any;
   @ViewChild('gmap') gmapElement: any;
 
-  constructor() { }
+  constructor(private user: AuthServiceManual) { }
 
   ngOnInit() {
     this.initmap();
+    setTimeout(() => {
+      this.getWeather();
+    }, 3000);
+    // this.getWeather();
   }
+
+  public async getWeather() {
+    try {
+      let response = await this.user.updateWeatherStatus(this.city);
+      console.log(response);    
+    } catch (error) {
+      console.log(error);
+    }
+  
+
+  }
+
 
   initmap() {
     this.latitude = 50.186769;
@@ -35,7 +52,7 @@ export class NewsfeedComponent implements OnInit {
           lat: position.coords.latitude,
           lng: position.coords.longitude
         },
-        geocoder = new google.maps.Geocoder();
+          geocoder = new google.maps.Geocoder();
         geocoder.geocode({ 'latLng': pos }, (results, status) => {
           if (status == google.maps.GeocoderStatus.OK) {
             if (results[1]) {

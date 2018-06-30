@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceManual } from '../../../services/authguard.service';
 
 @Component({
   selector: 'app-template-component',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TemplateComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth:AuthServiceManual) { }
 
   ngOnInit() {
   }

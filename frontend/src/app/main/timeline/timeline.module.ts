@@ -7,8 +7,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { AlbumComponent } from './album/album.component';
 import { MyfriendsComponent } from './myfriends/myfriends.component';
-import { FriendsComponent } from '../template/friends/friends.component';
-import { TemplateModule } from '../template/template.module';
+
 
 
 const route: Routes = [

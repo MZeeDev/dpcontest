@@ -1,7 +1,9 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { CompitationService } from '../../../services/compatation.services';
 import { AuthServiceManual } from '../../../services/authguard.service';
+declare const swal:any;
 
+ 
 @Component({
   selector: 'app-todays-compitation',
   templateUrl: './todays-compitation.component.html',
@@ -52,6 +54,7 @@ export class TodaysCompitationComponent implements OnInit, AfterViewInit {
   constructor(private comp: CompitationService, private authService: AuthServiceManual) { }
 
   ngOnInit() {
+    
     this.getCompitaios();
     this.getUserById();
   }
@@ -60,18 +63,21 @@ export class TodaysCompitationComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.getUserById();
     }, 5000);
-    // this.getUserById();
+    
   }
   async voteForFirstCandidate1(_id) {
     let candidateId = _id;
     await this.comp.Vote(candidateId);
+   
     this.voted = true;
+    swal("WOW!", "Thanks Buddy for Voting me!", "success"); 
   }
 
   async voteForFirstCandidate2(_id) {
     let candidateId = _id;
     await this.comp.Vote(candidateId);
     this.voted = true;
+    swal("WOW!", "Thanks Buddy for Voting me!", "success");
   }
 
   public async getUserById() {
@@ -80,15 +86,13 @@ export class TodaysCompitationComponent implements OnInit, AfterViewInit {
   }
 
   public async getCompitaios() {
-    try {
+      try { 
       let response = await this.comp.getAllCompitators();
       this.allCandidates = <any>response;
       this.compitatorsId = (<any>response)._id;
       for (let index = 0; index < this.allCandidates.length; index++) {
         this.cand1data = this.allCandidates[index].candidate1;
         this.cand2data = this.allCandidates[index].candidate2;
-        // console.log(this.cand1data);
-        // console.log(this.cand2data);
       }
       return response;
     } catch (error) {
