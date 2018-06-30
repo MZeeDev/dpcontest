@@ -3,17 +3,18 @@ import { Router } from '@angular/router';
 import { Config } from '../../config';
 import { HttpClient } from '@angular/common/http';
 @Injectable()
-export class CompitationService {
-    constructor(private httpClient: HttpClient, private router: Router) { }
-    //ToDo Start Compittaion
 
-    public startCompittaion(object) {
-        let response = this.httpClient.post(`${Config.API_BASE}/competition`, object, Config.HEADERS).toPromise();
+export class CompitationService {
+
+    constructor(private httpClient: HttpClient, private router: Router) { }
+
+    public startCompittaion(obj) {
+        let response = this.httpClient.post(`${Config.API_BASE}/competition`, obj, Config.HEADERS).toPromise();
         return response;
     }
+
     public getAllCompitators() {
         let response = this.httpClient.get(`${Config.API_BASE}/competition`, Config.HEADERS).toPromise();
-
         return response;
     }
 
@@ -28,10 +29,8 @@ export class CompitationService {
     }
 
     public Vote(candidateId) {
-
-        let response = this.httpClient.put(`${Config.API_BASE}/candidate/vote`, candidateId, Config.HEADERS).toPromise();
-        console.log(response);
-
+        let body = { candidateId: candidateId }
+        let response = this.httpClient.put(`${Config.API_BASE}/candidate/vote`, body, Config.HEADERS).toPromise();
         return response;
     }
 }

@@ -20,6 +20,15 @@ class UserController {
             errorHandler.sendError(res, error);
         }
     }
+    async getUserbyId(req, res) {
+        try {
+            let id=req.param.id;
+            let users = await User.findOne(id)
+            res.send(users);
+        } catch (error) {
+            errorHandler.sendError(res, error);
+        }
+    }
     async login(req, res) {
         try {
             let email = req.body.email;

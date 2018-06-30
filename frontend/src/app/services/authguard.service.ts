@@ -19,8 +19,8 @@ export class AuthServiceManual {
     createdAt: '',
     updatedAt: '',
     provider: '',
-    name:'',
-    photoUrl:''
+    name: '',
+    photoUrl: ''
   }
   constructor(private httpClient: HttpClient, private router: Router) { }
   //Sign Up
@@ -32,7 +32,7 @@ export class AuthServiceManual {
 
 
   public async signup(value) {
-   
+
     let response = await this.httpClient.post(`${Config.API_BASE}/user/signup`, value, Config.HEADERS).toPromise();
     return this.loginWithToken((<any>response).token);
   }
@@ -50,12 +50,12 @@ export class AuthServiceManual {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/login/check`, { token: token }, Config.HEADERS).toPromise();
       if ((<any>response).authenticated) {
         await this.getProfile(token);
-        
+
         return true;
       }
       else return false;
     } catch (error) {
-    
+
     }
   }
   //done
@@ -65,28 +65,31 @@ export class AuthServiceManual {
       let response = await this.httpClient.post(`${Config.API_BASE}/user/profile`, body, Config.HEADERS).toPromise();
       this.profile = <any>response;
     } catch (error) {
-     
+
     }
   }
   public loginWithToken(token) {
     localStorage.setItem("token", token);
     this.router.navigate(['/']);
   }
-//for Social logIn
-public async getAuthState(user) {
-  
-  let response = await this.httpClient.post(`${Config.API_BASE}/user/login/social`,user ).toPromise();
-  return this.loginWithToken((<any>response).token);
-}
+  //for Social logIn
+  public async getAuthState(user) {
+
+    let response = await this.httpClient.post(`${Config.API_BASE}/user/login/social`, user).toPromise();
+    return this.loginWithToken((<any>response).token);
+  }
   public logout() {
     try {
       let response = localStorage.removeItem("token");
       this.router.navigate(['/user-gate-way']);
     } catch (error) {
-    
-      
     }
-
+  }
+  public getAllUser() {
+    return this.httpClient.get(`${Config.API_BASE}/user`, Config.HEADERS).toPromise();
+  }
+  public getAllUserById(_id) {
+    return this.httpClient.get(`${Config.API_BASE}/user?id=${_id}`, Config.HEADERS).toPromise();
   }
 
 }

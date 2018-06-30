@@ -1,60 +1,61 @@
 <div class="row">
-  
-  <a>  <h1 id="heading1" >Contest is being held by  XXXXX</h1>
-  </a>
- 
+  <h1 id="heading1">Contest is being held by {{compitatorInfo}}</h1>
 </div>
 <div class="row">
   <!--Candidate 1-->
   <div class="col col-md-6">
     <table class="table">
       <thead>
-          <tr class="hidden">
-              <th>id of first Candidae</th>
-            </tr>
         <tr>
-          <th>{{cand1data.name}}</th>
+          <th>{{cand1data?.name}}</th>
         </tr>
         <tr>
           <th>
-          <img id="competatorPic" class="img-responsive" src="{{cand1data.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
-        </th>
+            <img id="competatorPic" class="img-responsive" src="{{cand1data?.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
+          </th>
         </tr>
         <tr *ngIf="!voted">
-          <th><button  class="btn btn-success" (click)="voteForFirstCandidate1(cand1data._id)">userName Vote For Me</button></th>
+          <th>
+            <button class="btn btn-success" (click)="voteForFirstCandidate1(cand1data._id)">{{authService.profile.name}} Vote For Me</button>
+          </th>
         </tr>
-        <tr>
-          <th>Result</th>
+        <tr *ngIf="voted">
+          <th>{{cand1data?.votes}} Votes</th>
         </tr>
       </thead>
     </table>
   </div>
   <!--Candidate 1 Ends here-->
- <!--Candidate 2 starts from here-->
+  <!--Candidate 2 starts from here-->
 
- <div class="col col-md-6">
+  <div class="col col-md-6">
     <table class="table">
       <thead>
-          <tr class="hidden">
-              <th>id of second Candidae</th>
-            </tr>
+        <tr class="hidden">
+          <th>id of second Candidae</th>
+        </tr>
         <tr>
-          <th>{{cand2data.name}}</th>
+          <th>{{cand2data?.name}}</th>
         </tr>
         <tr>
           <th>
-            <img id="competatorPic" class="img-responsive"
-             src="{{cand2data.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
+            <img id="competatorPic" class="img-responsive" src="{{cand2data?.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
           </th>
         </tr>
         <tr *ngIf="!voted">
-          <th style="align-content: center"><button class="btn btn-success" (click)="voteForFirstCandidate2(cand2data._id)">userName Vote For Me</button></th>
+          <th style="align-content: center">
+            <button class="btn btn-success" (click)="voteForFirstCandidate2(cand2data._id)">Hi! {{authService.profile.name}} Vote For Me</button>
+          </th>
         </tr>
-        <tr>
-          <th>Result</th>
+        <tr *ngIf="voted">
+          <th>{{cand2data?.votes}} Votes</th>
+        </tr>
+        <tr *ngIf="isVoteViewd">
+
+          <a (click)="viewPreviousVotes()" class="btn btn success">View Previous Votes</a>
         </tr>
       </thead>
     </table>
   </div>
- <!--Candidate 2 ends here-->
+  <!--Candidate 2 ends here-->
 </div>

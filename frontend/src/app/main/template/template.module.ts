@@ -10,6 +10,7 @@ import { TodaysCompitationComponent } from './todays-compitation/todays-compitat
 import { LeftSideBarComponent } from './left-side-bar/left-side-bar.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { StartContestComponent } from './start-contest/start-contest.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const route: Routes = [{
   path: "",
@@ -46,7 +47,9 @@ const route: Routes = [{
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(route)   
+    RouterModule.forChild(route),
+  FormsModule,
+  ReactiveFormsModule
    ],
   declarations: [TemplateComponentComponent, WhotofollowComponent, NewsfeedComponent, FriendsComponent, ImagesComponent, TodaysCompitationComponent, LeftSideBarComponent, UserDetailComponent, StartContestComponent],
   exports:[]

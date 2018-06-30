@@ -5,9 +5,10 @@ let httpHeaders: HttpHeaders = new HttpHeaders({ 'Content-type': 'application/js
 'Authorization': `bearer ${localStorage.getItem('token')}` });
 export const Config = Object.freeze({
     API_BASE: "http://localhost:3000/api",
-    HEADERS: { headers: httpHeaders },
+    HEADERS: { headers: httpHeaders,'Access-Control-Allow-Origin':'*' },
     refresh: function () {
-        httpHeaders = new HttpHeaders({ 'Content-type': 'application/json',       
-        'Access-Control-Allow-Origin':'*', 'Authorization': `bearer ${localStorage.getItem('token')}` });    
+        httpHeaders = new HttpHeaders({ 'Content-type': 'application/json', 
+        'Access-Control-Allow-Origin':'*',      
+       'Authorization': `bearer ${localStorage.getItem('token')}` });    
     }
 });

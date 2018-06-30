@@ -15,12 +15,11 @@ export class AppComponent implements OnInit {
         body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
         });
       }
-      else if ((event instanceof NavigationEnd) || (event instanceof NavigationError) || (event instanceof NavigationCancel)) {
+      else if ((event instanceof NavigationEnd) || (event instanceof NavigationError) || (event instanceof NavigationCancel)) {  
         var body = $("html, body");
         body.stop().animate({ scrollTop: 0 }, 1000, 'swing', function () {
         });
-
-      }
+      }    
     })
   }
   title = 'app';

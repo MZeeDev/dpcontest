@@ -116,4 +116,5 @@ class CompetitionController {
 }
 
 const competitionController = new CompetitionController();
+
 module.exports = { competitionController };

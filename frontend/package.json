@@ -13,13 +13,13 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^5.2.11",
-    "@angular/material": "^6.2.1",
     "@angular/cdk": "^6.2.1",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/core": "^5.2.0",
     "@angular/forms": "^5.2.0",
     "@angular/http": "^5.2.0",
+    "@angular/material": "^6.2.1",
     "@angular/platform-browser": "^5.2.0",
     "@angular/platform-browser-dynamic": "^5.2.0",
     "@angular/router": "^5.2.0",
@@ -32,6 +32,7 @@
     "ng-material-datetimepicker": "^1.15.2",
     "ng2-sweetalert2": "0.0.8",
     "rxjs": "^5.5.6",
+    "save": "^2.3.2",
     "zone.js": "^0.8.19"
   },
   "devDependencies": {

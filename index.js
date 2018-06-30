@@ -12,9 +12,8 @@ const path = require('path');
 app.use(bodyParser.json())
 app.use(cors({
     origin: 'http://localhost:4200',
-    credentials: true
+    credentials: true    
 }));
-
 
 app.use('/api', api);
 

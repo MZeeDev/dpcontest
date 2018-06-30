@@ -8,6 +8,7 @@ const router = new Router();
 
 //USER ROUTES
 router.get('/user', userController.getUsers);
+router.get('/user/getbyID', userController.getUserbyId);
 router.get('/user/competition', userController.getUserCompetitions);
 router.post('/user/signup', userController.signup);
 router.post('/user/login', userController.login);
@@ -16,6 +17,7 @@ router.post('/user/profile', userController.profile);
 router.get('/user/logout', userController.logout);
 router.post('/user/login/check', userController.checkLogin);
 router.get('/user/verify-email', userController.verifyEmail);
+
 
 
 //COMPETITION ROUTES

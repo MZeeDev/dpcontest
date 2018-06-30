@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceManual } from '../../../services/authguard.service';
 
 @Component({
   selector: 'app-whotofollow',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./whotofollow.component.css']
 })
 export class WhotofollowComponent implements OnInit {
+  public allUsers = [];
 
-  constructor() { }
+  constructor(private auth: AuthServiceManual) { }
 
   ngOnInit() {
+    this.getAllUsers();
   }
-
+  
+  public async  getAllUsers() {
+    let response = await this.auth.getAllUser();
+    this.allUsers = <any>response; 
+    console.log(this.allUsers);
+       
+  }
 }
