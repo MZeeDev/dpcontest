@@ -8,10 +8,11 @@ declare const google: any;
 })
 export class NewsfeedComponent implements OnInit {
 
-  public latitude: any;
-  public longitude: any;
-  @ViewChild('gmap') gmapElement: any;
+  latitude: number;
+  longitude: number;
+  city: any;
   map: any;
+  @ViewChild('gmap') gmapElement: any;
 
   constructor() { }
 
@@ -33,7 +34,23 @@ export class NewsfeedComponent implements OnInit {
         var pos = {
           lat: position.coords.latitude,
           lng: position.coords.longitude
-        };
+        },
+        geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'latLng': pos }, (results, status) => {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              for (var i = 0; i < results.length; i++) {
+                if (results[i].types[0] === "locality") {
+                  this.city = results[i].address_components[0].short_name;
+                  var state = results[i].address_components[2].short_name;
+                  console.log(this.city);
+                }
+              }
+            }
+            else { console.log("No reverse geocode results.") }
+          }
+          else { console.log("Geocoder failed: " + status) }
+        });
         this.latitude = pos.lat;
         this.longitude = pos.lng;
         mapProp.setCenter(pos);
@@ -61,8 +78,6 @@ export class NewsfeedComponent implements OnInit {
     google.maps.event.addListener(marker, 'dragend', (event) => {
       this.latitude = event.latLng.lat();
       this.longitude = event.latLng.lng();
-      console.log(this.latitude, this.longitude);
-      
     });
   }
 
