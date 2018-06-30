@@ -1,0 +1,49 @@
+<ng-container *ngIf="cand1">
+    <h1 style="text-align: center;font-size: 8">Please provide Information about Candidate 1</h1>
+  <form>
+    <div class="form-group col-xs-12">
+      <label for="name">Name</label>
+      <input id="name" class="form-control input-group-lg" type="text" name="name" ngModel required>
+    </div>
+    <div class="form-group col-xs-12">
+      <label for="name">Email</label>
+      <input id="name" class="form-control input-group-lg" type="text" name="email" ngModel required>
+    </div>
+    <div class="form-group col-xs-12">
+      <label for="name">Image Url</label>
+      <input id="name" class="form-control input-group-lg" type="text" name="picUrl" ngModel required>
+    </div>
+    <div class="form-group col-xs-12">
+      <label for="name">address</label>
+      <input id="name" class="form-control input-group-lg" type="text" name="address" ngModel required>
+    </div>
+    <button class="col-xs-12 btn btn-success" >Save And Continue to Candidate 2</button>
+  </form>
+</ng-container>
+<ng-container *ngIf="cand2">
+
+        <h1 style="text-align: center">Please provide Information about Candidate 2</h1>
+        <form>
+          <div class="form-group col-xs-12">
+            <label for="name">Name</label>
+            <input id="name" class="form-control input-group-lg" type="text" name="name" ngModel required>
+          </div>
+          <div class="form-group col-xs-12">
+            <label for="name">Email</label>
+            <input id="name" class="form-control input-group-lg" type="text" name="email" ngModel required>
+          </div>
+          <div class="form-group col-xs-12">
+            <label for="name">Image Url</label>
+            <input id="name" class="form-control input-group-lg" type="text" name="picUrl" ngModel required>
+          </div>
+          <div class="form-group col-xs-12">
+            <label for="name">address</label>
+            <input id="name" class="form-control input-group-lg" type="text" name="address" ngModel required>
+          </div>
+          <div class="form-group col-xs-12">
+                <label for="hours">Time (in hours)</label>
+                <input id="hours" class="form-control input-group-lg" type="number" max="23" name="hours" ngModel required>
+              </div>
+          <button class="col-xs-12 btn btn-success" >Let's Start!</button>
+        </form>
+</ng-container>

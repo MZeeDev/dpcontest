@@ -8,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class StartContestComponent implements OnInit {
 
   constructor() { }
-
+  public cand1:boolean=false;
+  public cand2:boolean=false;
   ngOnInit() {
+    this.cand2=true;
   }
 
 }

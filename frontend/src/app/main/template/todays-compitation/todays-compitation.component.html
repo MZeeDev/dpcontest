@@ -13,15 +13,15 @@
               <th>id of first Candidae</th>
             </tr>
         <tr>
-          <th>Name Of Candidae 1</th>
+          <th>{{cand1data.name}}</th>
         </tr>
         <tr>
           <th>
-          <img id="competatorPic" class="img-responsive" src="./../../../../assets/cand1.png" alt="Error in loading Pic, Please Refresh or wait!">
+          <img id="competatorPic" class="img-responsive" src="{{cand1data.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
         </th>
         </tr>
-        <tr>
-          <th><button class="btn btn-success" (click)="voteForFirstCandidate1(_id)">userName Vote For Me</button></th>
+        <tr *ngIf="!voted">
+          <th><button  class="btn btn-success" (click)="voteForFirstCandidate1(cand1data._id)">userName Vote For Me</button></th>
         </tr>
         <tr>
           <th>Result</th>
@@ -39,16 +39,16 @@
               <th>id of second Candidae</th>
             </tr>
         <tr>
-          <th>Name Of Candidate 2</th>
+          <th>{{cand2data.name}}</th>
         </tr>
         <tr>
           <th>
             <img id="competatorPic" class="img-responsive"
-             src="./../../../../assets/cand2.bmp" alt="Error in loading Pic, Please Refresh or wait!">
+             src="{{cand2data.picUrl}}" alt="Error in loading Pic, Please Refresh or wait!">
           </th>
         </tr>
-        <tr>
-          <th style="align-content: center"><button class="btn btn-success" (click)="voteForFirstCandidate2(_id)">userName Vote For Me</button></th>
+        <tr *ngIf="!voted">
+          <th style="align-content: center"><button class="btn btn-success" (click)="voteForFirstCandidate2(cand2data._id)">userName Vote For Me</button></th>
         </tr>
         <tr>
           <th>Result</th>
