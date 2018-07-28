@@ -11,7 +11,7 @@ const path = require('path');
 
 app.use(bodyParser.json())
 app.use(cors({
-    origin: 'https://dp-contest.herokuapp.com/',
+    origin: 'http://localhost:4200', 
     credentials: true    
 }));
 app.use('/api', api);
