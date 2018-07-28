@@ -14,15 +14,7 @@ app.use(cors({
     origin: 'https://dp-contest.herokuapp.com/',
     credentials: true    
 }));
-
 app.use('/api', api);
-
-app.use(express.static(path.join(__dirname, '/frontend/client/dist/dpcontest')));
-
-// app.get('*', (req, res) => {
-//     res.sendFile(path.join(__dirname, '/frontend/client/dist/home/index.html'));
-// });
-
 if (process.env.NODE_ENV === 'production') {
     app.use(function (req, res, next) {
         var protocol = req.get('x-forwarded-proto');
