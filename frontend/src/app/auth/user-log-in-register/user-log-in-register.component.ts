@@ -17,7 +17,7 @@ export class UserLogInRegisterComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
   }
-  async nonSubmittingRegistraionForm(registerationForm: NgForm) {
+  async onSubmittingRegistraionForm(registerationForm: NgForm) {
 
     try {
       let value = await registerationForm.value;

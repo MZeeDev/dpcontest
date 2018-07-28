@@ -3,7 +3,8 @@ let httpHeaders: HttpHeaders = new HttpHeaders({ 'Content-type': 'application/js
 
 'Authorization': `bearer ${localStorage.getItem('token')}` });
 export const Config = Object.freeze({
-    API_BASE: "http://localhost:3000/api",
+    // API_BASE: "http://localhost:3000/api",
+    API_BASE: "https://dp-contest.herokuapp.com/",
     HEADERS: { headers: httpHeaders},
     refresh: function () {
         httpHeaders = new HttpHeaders({ 'Content-type': 'application/json', 
