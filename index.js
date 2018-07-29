@@ -1,5 +1,4 @@
 'use strict'
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const config = require('./config');
@@ -8,12 +7,14 @@ const mongoose = require('./schema/mongoose');
 const api = require('./routes/api');
 const app = express();
 const path = require('path');
-
 app.use(bodyParser.json())
 app.use(cors({
-    origin: 'http://localhost:4200', 
+    origin: 'http://localhost:4200',
     credentials: true    
 }));
+app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, '/frontend/dist')));
+
 app.use('/api', api);
 if (process.env.NODE_ENV === 'production') {
     app.use(function (req, res, next) {

@@ -1,6 +1,7 @@
 {
     "PORT": 3000,
-    "BASE_URL": "http://localhost:3000",
+    "BASE_URLL": "http://localhost:3000",
+    "BASE_URL": "https://dp-contest.herokuapp.com/api",
     "TOKEN_SECRET": "uj669590tYGry",
     "MONGO_CONNECTION": "mongodb://zia:zia123@ds257470.mlab.com:57470/dpcontest",
     "MAIL_HOST": "mail.encapsulatech.com",
