@@ -16,17 +16,17 @@ const route: Routes = [
   {
     path: "",
     loadChildren: "./main/main.module#MainModule"
-    , canActivate: [UserAuthenticationGuard]
+    // , canActivate: [UserAuthenticationGuard]
   },
   {
     path: "home",
     loadChildren: "./main/main.module#MainModule"
-    , canActivate: [UserAuthenticationGuard]
+    // , canActivate: [UserAuthenticationGuard]
   },
   {
     path: "user-gate-way",
     loadChildren: "./auth/auth.module#AuthModule",
-    canActivate: [GuestGuard]
+    // canActivate: [GuestGuard]
   }
 ]
 @NgModule({
